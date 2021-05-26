@@ -1,2 +1,3 @@
-2021/05/24-01:36:00.572 5 Creating DB /home/maxim/.config/BraveSoftware/Brave-Browser/Default/Local Storage/leveldb since it was missing.
-2021/05/24-01:36:00.603 5 Reusing MANIFEST /home/maxim/.config/BraveSoftware/Brave-Browser/Default/Local Storage/leveldb/MANIFEST-000001
+2021/05/25-00:10:19.914 3 Reusing MANIFEST /home/maxim/.config/BraveSoftware/Brave-Browser/Default/Local Storage/leveldb/MANIFEST-000001
+2021/05/25-00:10:19.915 3 Recovering log #3
+2021/05/25-00:10:19.916 3 Reusing old log /home/maxim/.config/BraveSoftware/Brave-Browser/Default/Local Storage/leveldb/000003.log 

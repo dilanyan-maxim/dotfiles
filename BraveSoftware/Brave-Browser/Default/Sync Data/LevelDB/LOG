@@ -1,2 +1,3 @@
-2021/05/24-01:36:00.492 1585 Creating DB /home/maxim/.config/BraveSoftware/Brave-Browser/Default/Sync Data/LevelDB since it was missing.
-2021/05/24-01:36:00.523 1585 Reusing MANIFEST /home/maxim/.config/BraveSoftware/Brave-Browser/Default/Sync Data/LevelDB/MANIFEST-000001
+2021/05/25-00:10:19.884 1cff Reusing MANIFEST /home/maxim/.config/BraveSoftware/Brave-Browser/Default/Sync Data/LevelDB/MANIFEST-000001
+2021/05/25-00:10:19.884 1cff Recovering log #3
+2021/05/25-00:10:19.884 1cff Reusing old log /home/maxim/.config/BraveSoftware/Brave-Browser/Default/Sync Data/LevelDB/000003.log 

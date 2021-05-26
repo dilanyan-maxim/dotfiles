@@ -1,5 +1,7 @@
 [Default Applications]
 x-scheme-handler/tg=userapp-Telegram Desktop-R5FZ30.desktop
+image/png=sxiv.desktop
 
 [Added Associations]
 x-scheme-handler/tg=userapp-Telegram Desktop-R5FZ30.desktop;
+image/png=sxiv.desktop;
