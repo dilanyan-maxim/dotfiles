@@ -1,1 +1,9 @@
-BraveSoftware
+#Ignore everything in repository root
+/*
+
+# File to not ignore
+!/.gitignore/
+!/bash/
+!/alacritty/
+!/libfm/
+!/nvim/
