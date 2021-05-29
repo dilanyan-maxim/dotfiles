@@ -206,9 +206,10 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
+
 # Screenshots
 bindsym Print exec $screenshot
-bindsym $mod+Shift+Print exec $screenclip
+bindsym $mod+Print exec $screenclip
 
 #
 # Status Bar:
