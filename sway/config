@@ -94,8 +94,29 @@ input "type:keyboard" {
     # Reload the configuration file
     bindsym $mod+Shift+c reload
 
-    # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+# sway exit menu
+set $lock exec swaylock
+set $mode_system System: (l) lock, (e) logout, (s) shutdown, (r) reboot
+mode "$mode_system" {
+    bindsym l exec $lock, mode "default"
+    bindsym e exit
+    bindsym s exec --no-startup-id systemctl poweroff -i, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Shift+e mode "$mode_system"
+
+set $mode_quicklaunch System: (f) firefox, (t) telegram
+mode "$mode_quicklaunch" {
+     bindsym t exec telegram-desktop, mode "default"
+     bindsym f exec firefox, mode "default"
+
+     bindsym Return mode "default"
+     bindsym Escape mode "default"
+}
+bindsym $mod+o mode "$mode_quicklaunch"
+
 #
 # Moving around:
 #
