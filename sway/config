@@ -79,10 +79,10 @@ input "type:keyboard" {
     bindsym $mod+Return exec $term
 
     # Kill focused window
-    bindsym $mod+Shift+q kill
+    bindsym --to-code $mod+Shift+q kill
 
     # Start your launcher
-    bindsym $mod+d exec $menu
+    bindsym --to-code $mod+d exec $menu
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -92,30 +92,31 @@ input "type:keyboard" {
     floating_modifier $mod normal
 
     # Reload the configuration file
-    bindsym $mod+Shift+c reload
+    bindsym --to-code $mod+Shift+c reload
 
 # sway exit menu
 set $lock exec swaylock
 set $mode_system System: (l) lock, (e) logout, (s) shutdown, (r) reboot
 mode "$mode_system" {
-    bindsym l exec $lock, mode "default"
-    bindsym e exit
-    bindsym s exec --no-startup-id systemctl poweroff -i, mode "default"
-    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym --to-code l exec $lock, mode "default"
+    bindsym --to-code e exit
+    bindsym --to-code s exec --no-startup-id systemctl poweroff -i, mode "default"
+    bindsym --to-code r exec --no-startup-id systemctl reboot, mode "default"
+
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+Shift+e mode "$mode_system"
+bindsym --to-code $mod+Shift+e mode "$mode_system"
 
 set $mode_quicklaunch System: (f) firefox, (t) telegram
 mode "$mode_quicklaunch" {
-     bindsym t exec telegram-desktop, mode "default"
-     bindsym f exec firefox, mode "default"
+     bindsym --to-code t exec telegram-desktop, mode "default"
+     bindsym --to-code f exec firefox, mode "default"
 
      bindsym Return mode "default"
      bindsym Escape mode "default"
 }
-bindsym $mod+o mode "$mode_quicklaunch"
+bindsym --to-code $mod+o mode "$mode_quicklaunch"
 
 #
 # Moving around:
@@ -174,16 +175,16 @@ bindsym $mod+o mode "$mode_quicklaunch"
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
-    bindsym $mod+b splith
-    bindsym $mod+v splitv
+    bindsym --to-code $mod+b splith
+    bindsym --to-code $mod+v splitv
 
     # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
-    bindsym $mod+w layout tabbed
-    bindsym $mod+e layout toggle split
+    bindsym --to-code $mod+s layout stacking
+    bindsym --to-code $mod+w layout tabbed
+    bindsym --to-code $mod+e layout toggle split
 
     # Make the current focus fullscreen
-    bindsym $mod+f fullscreen
+    bindsym --to-code $mod+f fullscreen
 
     # Toggle the current focus between tiling and floating mode
     bindsym $mod+Shift+space floating toggle
@@ -192,7 +193,7 @@ bindsym $mod+o mode "$mode_quicklaunch"
     bindsym $mod+space focus mode_toggle
 
     # Move focus to the parent container
-    bindsym $mod+a focus parent
+    bindsym --to-code $mod+a focus parent
 #
 # Scratchpad:
 #
@@ -228,7 +229,7 @@ mode "resize" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+r mode "resize"
+bindsym --to-code $mod+r mode "resize"
 
 # Screenshots
 bindsym Print exec $screenshot
