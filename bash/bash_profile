@@ -5,6 +5,7 @@ alias la='ls -lA'
 alias ..='cd ..'
 alias mkdir='mkdir -p'
 alias df='df -h'
+export GTK_THEME='Arc-Dark'
 
 # If running from tty1 start sway
 if [ "$(tty)" = "/dev/tty1" ]; then
