@@ -1,14 +1,9 @@
-alias vim=nvim
-alias ls='ls --color=auto -h'
-alias ll='ls -l'
-alias la='ls -lA'
-alias ..='cd ..'
-alias mkdir='mkdir -p'
-alias df='df -h'
-alias pdf='zathura'
-alias img='sxiv'
 export GTK_THEME='Arc-Dark'
 export EDITOR="/usr/bin/nvim"
+export PATH=/usr/bin/:$PATH
+
+# If bashrc file exists load it
+if [ -f ~/.config/bash/bashrc ]; then . ~/.config/bash/bashrc; fi
 
 # If running from tty1 start sway
 if [ "$(tty)" = "/dev/tty1" ]; then
