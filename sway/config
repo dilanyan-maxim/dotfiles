@@ -107,6 +107,7 @@ mode "$mode_system" {
 }
 bindsym --to-code $mod+Shift+e mode "$mode_system"
 
+# Show quick launch menu with popular applications
 set $mode_quicklaunch System: (f) firefox, (t) telegram, (k) keepass, (p) pcmanfm, (m) mail, (l) leafpad, (v) vim
 mode "$mode_quicklaunch" {
      bindsym --to-code t exec telegram-desktop, mode "default"
