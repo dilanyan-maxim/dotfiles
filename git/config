@@ -4,4 +4,10 @@
 	name = Maxim Dilanyan
 	email = maxim@dilanyan.xyz
 [alias]
-	plog = log --pretty=format:"%h%x09%an%x09%ad%x09%s"
+	# pretty short log
+	# %h = abbreviated commit hash
+	# %x09 = tab (character for code 9)
+	# %an = author name
+	# %ad = author date (format respects --date= option)
+	# %s = subject.
+	plog = log --pretty=format:"%h%x09%ad%x09%an%x09%s" --date=short
