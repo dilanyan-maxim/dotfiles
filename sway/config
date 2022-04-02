@@ -13,25 +13,18 @@ set $left h
 set $down j
 set $up k
 set $right l
-# Your preferred terminal emulator
-set $term /usr/bin/alacritty
-# Your preferred application launcher
-# Note: pass the final command to swaymsg so that the resulting window can be opened
-# on the original workspace that the command was run on.
-for_window [app_id="^launcher$"] floating enable, sticky enable, resize set 30 ppt 60 ppt, border pixel 10
-set $menu exec $term --class=launcher -e ~/scripts/sway-launcher-desktop.sh
-
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/pic/wallpaper.jpg fill
+# output * bg ~/pic/wallpaper.jpg fill
 #
 # Example configuration:
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
+#output DP-1 resolution 1920x1200 position 1920,0
 
 ### Idle configuration
 #
@@ -47,15 +40,15 @@ output * bg ~/pic/wallpaper.jpg fill
 # resumed. It will also lock your screen before your computer goes to sleep.
 
 ### Input configuration
-input "1112:390:KYE_SYSTEMS_CORP._Wired_Mouse" {
-	accel_profile flat
-	pointer_accel -0.28
-}
-
-input "type:keyboard" {
-    xkb_layout us,ru
-    xkb_options grp:alt_shift_toggle
-}
+#input "1112:390:KYE_SYSTEMS_CORP._Wired_Mouse" {
+#	accel_profile flat
+#	pointer_accel -0.28
+#}
+#
+#input "type:keyboard" {
+#    xkb_layout us,ru
+#    xkb_options grp:alt_shift_toggle
+#}
 
 # Example configuration:
 #
@@ -92,36 +85,6 @@ input "type:keyboard" {
 
     # Reload the configuration file
     bindsym --to-code $mod+Shift+c reload
-
-# sway exit menu
-set $lock exec swaylock
-set $mode_system System: (l) lock, (e) logout, (s) shutdown, (r) reboot
-mode "$mode_system" {
-    bindsym --to-code l exec $lock, mode "default"
-    bindsym --to-code e exit
-    bindsym --to-code s exec --no-startup-id systemctl poweroff -i, mode "default"
-    bindsym --to-code r exec --no-startup-id systemctl reboot, mode "default"
-
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-bindsym --to-code $mod+Shift+e mode "$mode_system"
-
-# Show quick launch menu with popular applications
-set $mode_quicklaunch System: (f) firefox, (t) telegram, (k) keepass, (p) pcmanfm, (m) mail, (l) leafpad, (v) vim
-mode "$mode_quicklaunch" {
-     bindsym --to-code t exec telegram-desktop, mode "default"
-     bindsym --to-code f exec firefox, mode "default"
-     bindsym --to-code p exec pcmanfm, mode "default"
-     bindsym --to-code k exec keepassxc, mode "default"
-     bindsym --to-code m exec thunderbird, mode "default"
-     bindsym --to-code l exec leafpad, mode "default"
-     bindsym --to-code v exec nvim, mode "default"
-
-     bindsym Return mode "default"
-     bindsym Escape mode "default"
-}
-bindsym --to-code $mod+o mode "$mode_quicklaunch"
 
 #
 # Moving around:
@@ -239,8 +202,6 @@ bindsym --to-code $mod+r mode "resize"
 #
 # Screenshots
 #
-set $screenshot grim ~/scrn/$(date +"%Y-%m-%d-%H-%M-%S").png
-set $screenclip slurp | grim -g - ~/scrn/$(date +"%Y-%m-%d-%H-%M-%S").png
 bindsym Print exec $screenshot
 bindsym $mod+Print exec $screenclip
 
@@ -248,25 +209,20 @@ bindsym $mod+Print exec $screenclip
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
-bar {
-    position bottom
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    status_command while date +'%d.%m.%Y %H:%M'; do sleep 1; done
-
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
-}
-
-# Start clipboard manager
-exec wl-paste -t text --watch clipman store --no-persist
+# bar {
+#     position bottom
+# 
+#     # When the status_command prints a new line to stdout, swaybar updates.
+#     # The default just shows the current date and time.
+#     status_command while date +'%d.%m.%Y %H:%M'; do sleep 1; done
+# 
+#     colors {
+#         statusline #ffffff
+#         background #323232
+#         inactive_workspace #32323200 #32323200 #5c5c5c
+#     }
+# }
 
 include /etc/sway/config.d/*
+include ~/.config/sway/config.d/*
 
-workspace 1, exec $term
-workspace 2, exec firefox
-workspace 3, exec thunderbird

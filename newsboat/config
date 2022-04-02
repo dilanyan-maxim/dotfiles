@@ -1,3 +1,3 @@
 auto-reload yes
 browser "firefox --new-tab %u"
-macro v set browser "mpv %u"; open-in-browser; set browser "firefox --new-tab %u"
+macro v set browser "mpv %u"; open-in-browser; set browser "firefox --new-tab %u"; toggle-article-read "read"
