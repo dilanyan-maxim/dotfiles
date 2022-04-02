@@ -1,0 +1,12 @@
+# sway exit menu
+set $mode_system System: (l) lock, (e) logout, (s) shutdown, (r) reboot
+mode "$mode_system" {
+    bindsym --to-code l exec $lock, mode "default"
+    bindsym --to-code e exit
+    bindsym --to-code s exec --no-startup-id systemctl poweroff -i, mode "default"
+    bindsym --to-code r exec --no-startup-id systemctl reboot, mode "default"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym --to-code $mod+Shift+e mode "$mode_system"
