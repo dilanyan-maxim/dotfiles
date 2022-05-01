@@ -5,6 +5,7 @@ input "1112:390:KYE_SYSTEMS_CORP._Wired_Mouse" {
 }
 
 input "type:keyboard" {
-    xkb_layout us,ru
+    xkb_layout us,ru,ua
     xkb_options grp:alt_shift_toggle
 }
+
