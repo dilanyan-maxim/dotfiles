@@ -1,0 +1,5 @@
+# Basic configuration
+
+# Borders will only be enabled if the workspace has more than one visible child
+smart_borders on
+
