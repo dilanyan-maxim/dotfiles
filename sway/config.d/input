@@ -1,7 +1,7 @@
 ### Input configuration
 input "1112:390:KYE_SYSTEMS_CORP._Wired_Mouse" {
 	accel_profile flat
-	pointer_accel -0.28
+	pointer_accel -0.5
 }
 
 input "type:keyboard" {
