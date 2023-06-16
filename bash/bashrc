@@ -7,5 +7,4 @@ alias mkdir='mkdir -p'
 alias df='df -h'
 alias pdf='zathura'
 alias img='sxiv'
-complete -C '/usr/bin/aws_completer' aws
 

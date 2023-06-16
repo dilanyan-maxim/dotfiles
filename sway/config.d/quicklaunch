@@ -1,15 +1,11 @@
 # Show quick launch menu with popular applications
-set $mode_quicklaunch System: (f) firefox, (t) telegram, (k) keepass, (p) pcmanfm, (m) mail, (l) leafpad, (v) vim
+set $mode_quicklaunch System: (k) keepass, (f) filemanager, (n) notepad
 mode "$mode_quicklaunch" {
-     bindsym --to-code t exec telegram-desktop, mode "default"
-     bindsym --to-code f exec firefox, mode "default"
-     bindsym --to-code p exec pcmanfm, mode "default"
+     bindsym --to-code f exec pcmanfm, mode "default"
      bindsym --to-code k exec keepassxc, mode "default"
-     bindsym --to-code m exec thunderbird, mode "default"
-     bindsym --to-code l exec leafpad, mode "default"
-     bindsym --to-code v exec nvim, mode "default"
+     bindsym --to-code n exec leafpad, mode "default"
 
      bindsym Return mode "default"
      bindsym Escape mode "default"
 }
-bindsym --to-code $mod+o mode "$mode_quicklaunch"
+bindsym --to-code $mod+q mode "$mode_quicklaunch"

@@ -1,8 +1,12 @@
 # Start clipboard manager
 exec wl-paste -t text --watch clipman store --no-persist
 
-workspace 1, exec $term
-workspace 3, exec telegram-desktop
-workspace 3, exec thunderbird
-workspace 2, exec firefox
+# Start and place applications on workspaces
+exec swaymsg --quiet "exec $term"
+exec swaymsg --quiet "exec pcmanfm"
+exec swaymsg --quiet "exec librewolf"
+exec swaymsg --quiet "exec telegram-desktop"
+exec swaymsg --quiet "exec thunderbird"
+exec swaymsg --quiet "workspace 2"
+for_window [instance="pcmanfm"] move window to workspace 1
 

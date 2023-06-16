@@ -1,11 +1,14 @@
 # Your preferred terminal emulator
-set $term /usr/bin/alacritty
+set $term /usr/bin/kitty
 
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 for_window [app_id="^launcher$"] floating enable, sticky enable, resize set 30 ppt 60 ppt, border pixel 10
 set $menu exec $term --class=launcher -e ~/scripts/sway-launcher-desktop.sh
+
+for_window [app_id="^launcher$"] floating enable, sticky enable, resize set 30 ppt 60 ppt, border pixel 10
+bindsym --to-code $mod+n exec $term --class=launcher -e ~/scripts/quicklaunch.sh
 
 # sway exit menu
 set $lock exec swaylock
@@ -14,4 +17,9 @@ set $lock exec swaylock
 #
 set $screenshot grim ~/scrn/$(date +"%Y-%m-%d-%H-%M-%S").png
 set $screenclip slurp | grim -g - ~/scrn/$(date +"%Y-%m-%d-%H-%M-%S").png
+
+# Assign default workspaces for applications
+assign [class="LibreWolf"] workspace 2
+assign [class="thunderbird"] workspace 3
+assign [app_id="org\.telegram\.desktop"] workspace 3
 
